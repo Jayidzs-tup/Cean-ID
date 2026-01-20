@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oceanxx.ID</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow:hidden;
+    }
+    body {
+      background-image: url('foto.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .dashboard {
+  position: fixed;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  padding: 80px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(2px);
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  color: white;
+}
+    .pp {
+      position:fixed;
+      top:15%;
+      left:175px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      padding: 3px;
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+    .video-bg {
+      position:relative;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -3;
+    }
+    .text {
+  position: fixed;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+}
+    .text-two {
+      animation: glowPulse 2.5s ease-in-out infinite;
+      
+      position:fixed;
+      top:34%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      pointer-events: none;
+      letter-spacing:2px;
+    }
+@keyframes glowPulse {
+  0% {
+    text-shadow:
+      0 0 5px #00f2ff,
+      0 0 15px #ff00ff,
+      0 0 30px #00ff85;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #ffea00,
+      0 0 25px #00f2ff,
+      0 0 45px #ff00ff;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #00f2ff,
+      0 0 15px #ff00ff,
+      0 0 30px #00ff85;
+  }
+}
+.icon-bulat {
+  position: fixed;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+
+  background-image: url('wa.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+
+  cursor: pointer;
+  z-index: 10;
+}
+.icon-bulat2 {
+  position: fixed;
+  top: 47%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  background-image: url('di.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+
+  cursor: pointer;
+  z-index: 10;
+}
+.icon-bulat3 {
+  position: fixed;
+  top: 47%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  background-image: url('em.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+
+  cursor: pointer;
+  z-index: 10;
+}
+.btn-youtube {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 320px;
+  height: 45px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  backdrop-filter: blur(6px);
+  border-radius:18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-youtube a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-image:url('yu.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 8px;
+  top:9px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+.icon img {
+  width: 16px;
+  height: 16px;
+}
+.btn-tiktok {
+  position: fixed;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 320px;
+  height: 45px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  backdrop-filter: blur(6px);
+  border-radius:18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-tiktok a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon2 {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-image:url('tik.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 8px;
+  top:9px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+.icon2 img {
+  width: 16px;
+  height: 16px;
+}
+.btn-instagram {
+  position: fixed;
+  top: 69%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 320px;
+  height: 45px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  backdrop-filter: blur(6px);
+  border-radius:18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-instagram a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon3 {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-image:url('in.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 8px;
+  top:9px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+.icon3 img {
+  width: 16px;
+  height: 16px;
+}
+.btn-Saluran {
+  position: fixed;
+  top: 76%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 320px;
+  height: 45px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  backdrop-filter: blur(6px);
+  border-radius:18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-Saluran a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon4 {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-image:url('sa.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 8px;
+  top:9px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+.icon4 img {
+  width: 16px;
+  height: 16px;
+}
+.btn-Donasi {
+  position: fixed;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 320px;
+  height: 45px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  backdrop-filter: blur(6px);
+  border-radius:18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-Donasi a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon5 {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-image:url('do.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 8px;
+  top:9px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+.icon5 img {
+  width: 16px;
+  height: 16px;
+}
+.btn-youtube .label,
+.btn-tiktok .label,
+.btn-instagram .label,
+.btn-Saluran .label,
+.btn-Donasi .label {
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #b8f9ff,
+    #ffd6ff,
+    #ffffff
+  );
+  background-size: 300% 300%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: softColor 6s ease-in-out infinite;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+@keyframes softColor {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  </style>
+</head>
+<body>
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="vid.mp4" type="video/mp4">
+  </video>
+  
+  <img src="pp.png" class="pp">
+  
+  <div class="dashboard"></div>
+  
+  <div class="text">
+    <h1>Selamat Datang!</h1>
+  </div>
+  
+  <div class="text-two">
+    <p1>Trimakasih Sudah Mampir Di Web Kami, kini Adalah Web resmi Kami Dengan Akun Media Sosial Asli Kami Di Sini! Silakan Mampir</p1>
+  </div>
+  
+   <div class="icon-bulat" onclick="wa.me/628986800201"></div>
+   
+      <div class="icon-bulat2" onclick="https://discord.gg/pqXZrtD5'"></div>
+      
+      <div class="icon-bulat3" onclick="ceanxxid@gmail.com"></div>
+  
+<div class="btn-youtube">
+  <a href="https://www.youtube.com/@okwaisjay" class="btn-social">
+    <span class="icon">
+    </span>
+    <span class="label">YoutubeMe</span>
+  </a>
+</div>
+</div>
+
+<div class="btn-tiktok">
+  <a href="https://www.tiktok.com/@oceanxxid?is_from_webapp=1&sender_device=pc" class="btn-social2">
+    <span class="icon2">
+    </span>
+    <span class="label">TikTok</span>
+  </a>
+</div>
+</div>
+
+<div class="btn-instagram">
+  <a href="https://www.instagram.com/ethensnael?igsh=cmc4MGZoNTl2YWUz" class="btn-social3">
+    <span class="icon3">
+    </span>
+    <span class="label">Instagram</span>
+  </a>
+</div>
+</div>
+
+<div class="btn-Saluran">
+  <a href="https://whatsapp.com/channel/0029VbAZWJf4Y9lpx0wxCI0o" class="btn-social4">
+    <span class="icon4">
+    </span>
+    <span class="label">Saluran</span>
+  </a>
+</div>
+</div>
+
+<div class="btn-Donasi">
+  <a href="https://donasiokwaid.vercel.app" class="btn-social5">
+    <span class="icon5">
+    </span>
+    <span class="label">Donasi</span>
+  </a>
+</div>
+</div>
+</body>
+</html>
