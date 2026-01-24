@@ -1,223 +1,245 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oceanxx.ID</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
+<html>
+  <head>
+    <title>Oceanxx.id</title>
+    <style>
     html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      width:100%;
+      max-height:100%;
     }
-
     body {
-      background: black;
-      color: white;
+      min-height:100vh;
+      background:white;
     }
-
-    /* VIDEO */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
+    .bg-video {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      pointer-events:none;
     }
-
-    /* PROFILE */
-    .pp {
-      position: fixed;
-      top: 12%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      padding: 3px;
-      background: white;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-    }
-
-    /* DASHBOARD */
     .dashboard {
-      position: fixed;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 360px;
-      height: 260px;
-      background: rgba(255,255,255,0.15);
+      position:fixed;
+      top:200px;
+      left:35px;
+      width:170px;
+      padding:100px;
+      border-radius: 16px;
       backdrop-filter: blur(4px);
-      border-radius: 18px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-      z-index: 1;
-    }
-
-    /* TEXT */
-    .text {
-      position: fixed;
-      top: 24%;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      font-size: 12px;
-      z-index: 5;
-    }
-
-    .text-two {
-      position: fixed;
-      top: 31%;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      z-index: 5;
-      animation: glowPulse 2.5s ease-in-out infinite;
-      width: 80%;
-    }
-
-    @keyframes glowPulse {
-      0% {
-        text-shadow: 0 0 5px #00f2ff, 0 0 15px #ff00ff;
-      }
-      50% {
-        text-shadow: 0 0 10px #ffea00, 0 0 25px #00f2ff;
-      }
-      100% {
-        text-shadow: 0 0 5px #00f2ff, 0 0 15px #ff00ff;
-      }
-    }
-
-    /* ICON BULAT */
-    .icon-bulat,
-    .icon-bulat2,
-    .icon-bulat3 {
-      position: fixed;
-      top: 44%;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 0 20px rgba(255,255,255,0.9);
-      background-size: cover;
-      background-position: center;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .icon-bulat { left: 50%; transform: translate(-50%, -50%); background-image: url('wa.png'); }
-    .icon-bulat2 { left: 65%; transform: translate(-50%, -50%); background-image: url('di.png'); }
-    .icon-bulat3 { left: 35%; transform: translate(-50%, -50%); background-image: url('em.png'); }
-
-    /* BUTTON */
-    .btn {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 320px;
-      height: 45px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 18px;
-      backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
+      -webkit-backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(220, 220, 220, 0.8);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.15),
+                  inset 0 0 6px rgba(255, 255, 255, 0.2);
       color: white;
+      font-family: system-ui, sans-serif;
+      text-align: center;
     }
-
-    .btn a {
-      color: white;
-      text-decoration: none;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+    .profile {
+      position:fixed;
+      width:72px;
+      height:72px;
+      border-radius:50%;
+      padding:4px;
+      backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(220,220,220,0.85);
+    top:190px;
+    left:45px;
     }
-
-    .label {
-      background: linear-gradient(120deg, #ffffff, #b8f9ff, #ffd6ff, #ffffff);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: softColor 6s ease-in-out infinite;
-      letter-spacing: 1px;
+    .profile img {
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      object-fit:cover;
     }
-
-    @keyframes softColor {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .text h1 {
+      position:fixed;
+      top:220px;
+      left:155px;
+      margin:0;
+      font-size:22px;
+      font-weight:600;
+      color:white;
+      -webkit-text-stroke: 1px black;
+      text-shadow:
+      0 0 4px rgba(255,255,255,0.6);
+      0 0 5px rgba(255,255,255,0.4)
     }
+.text p {
+  position: fixed;
+  top: 280px;
+  left: 45px;
+  max-width: 300px;
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+       color: white;
+      text-shadow:
+       0 0 4px rgba(255,255,255,0.6),
+       0 0 10px rgba(180,220,255,0.45),
+       0 0 18px rgba(140,180,255,0.25);
+       -webkit-text-stroke: 0.4px rgba(0,0,0,0.7);
+     }
+      @keyframes gradientMove {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+     .tom1 {
+  position: fixed;
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
 
-    .btn-youtube { top: 54%; }
-    .btn-tiktok { top: 61%; }
-    .btn-instagram { top: 68%; }
-    .btn-saluran { top: 75%; }
-    .btn-donasi { top: 82%; }
-  </style>
-</head>
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
 
-<body>
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="vid.mp4" type="video/mp4">
-  </video>
+  border: 1.6px solid rgba(255,255,255,0.95);
 
-  <img src="pp.png" class="pp">
+  box-shadow:
+    0 0 6px rgba(255,255,255,0.7),
+    0 0 14px rgba(200,220,255,0.5);
 
-  <div class="dashboard"></div>
+  transition: all 0.25s ease;
+}
 
-  <div class="text">
-    <h1>Selamat Datang!</h1>
-  </div>
+.tom1 img {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
+  border-radius:50%;
+}
 
-  <div class="text-two">
-    <p>Trimakasih Sudah Mampir Di Web Kami, kini Adalah Web resmi Kami Dengan Akun Media Sosial Asli Kami Di Sini! Silakan Mampir</p>
-  </div>
+.tom1:hover {
+  transform: translateX(-50%) scale(1.12);
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.95),
+    0 0 24px rgba(180,220,255,0.75);
+}
 
-  <div class="icon-bulat" onclick="window.location.href='https://wa.me/628986800201'"></div>
-  <div class="icon-bulat2" onclick="window.location.href='https://discord.gg/pqXZrtD5'"></div>
-  <div class="icon-bulat3" onclick="window.location.href='mailto:ceanxxid@gmail.com'"></div>
+     .tom2 {
+  position: fixed;
+  top: 400px;
+  left: 62%;
+  transform: translateX(-50%);
 
-  <div class="btn btn-youtube">
-    <a href="https://www.youtube.com/@okwaisjay"><span class="label">YoutubeMe</span></a>
-  </div>
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
 
-  <div class="btn btn-tiktok">
-    <a href="https://www.tiktok.com/@oceanxxid?is_from_webapp=1&sender_device=pc"><span class="label">TikTok</span></a>
-  </div>
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 
-  <div class="btn btn-instagram">
-    <a href="https://www.instagram.com/ethensnael?igsh=cmc4MGZoNTl2YWUz"><span class="label">Instagram</span></a>
-  </div>
+  border: 1.6px solid rgba(255,255,255,0.95);
 
-  <div class="btn btn-saluran">
-    <a href="https://whatsapp.com/channel/0029VbAZWJf4Y9lpx0wxCI0o"><span class="label">Saluran</span></a>
-  </div>
+  box-shadow:
+    0 0 6px rgba(255,255,255,0.7),
+    0 0 14px rgba(200,220,255,0.5);
 
-  <div class="btn btn-donasi">
-    <a href="https://donasiokwaid.vercel.app"><span class="label">Donasi</span></a>
-  </div>
+  transition: all 0.25s ease;
+}
 
-</body>
+.tom2 img {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
+  border-radius:50%;
+}
+
+.tom2:hover {
+  transform: translateX(-50%) scale(1.12);
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.95),
+    0 0 24px rgba(180,220,255,0.75);
+}
+     .tom3 {
+  position: fixed;
+  top: 400px;
+  left: 38%;
+  transform: translateX(-50%);
+
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border: 1.6px solid rgba(255,255,255,0.95);
+
+  box-shadow:
+    0 0 6px rgba(255,255,255,0.7),
+    0 0 14px rgba(200,220,255,0.5);
+
+  transition: all 0.25s ease;
+}
+
+.tom3 img {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
+  border-radius:50%;
+}
+
+.tom3:hover {
+  transform: translateX(-50%) scale(1.12);
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.95),
+    0 0 24px rgba(180,220,255,0.75);
+}
+    </style>
+  </head>
+  <body>
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="vid.mp4" type="video/mp4">
+    </video>
+    
+    <div class="dashboard"></div>
+    
+    <div class="profile">
+      <img src="pp.png">
+    </div>
+    
+    <div class="text">
+      <h1>Selamat Datang!</h1>
+      <p>Trimakasih Sudah Mampir Di Web Kami, kini Adalah Web resmi Kami Dengan Akun Media Sosial Asli Kami Di Sini! Silakan Mampir</p>
+    </div>
+    
+    <a href="https://wa.me/628986800201" class="tom1" target="_blank">
+  <img src="wa.png" alt="logo">
+</a>
+
+      <a href="https://discord.gg/pqXZrtD5" class="tom2" target="_blank">
+  <img src="di.png" alt="logo">
+</a>
+
+         <a href="https://" class="tom3" target="_blank">
+  <img src="em.png" alt="logo">
+</a>
+  </body>
 </html>
